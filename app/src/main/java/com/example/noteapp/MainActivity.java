@@ -110,17 +110,18 @@ public class MainActivity extends AppCompatActivity {
             return 0;
         }
     }
-    public void alertcode(View view,int i){
+    public void alertcode(View view,int j){
+        final int k=j;
         new AlertDialog.Builder(this)
                 .setIcon(android.R.drawable.ic_delete)
                 .setTitle("Delete Note")
-                .setMessage("Do you want to delete"+notes.get(i)+" note")
+                .setMessage("Do you want to delete"+notes.get(k)+" note")
                 .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        notes.remove(i);
-                        int k=editdataadapter();
-                        if(k==1)
+                        notes.remove(k);
+                        int m=editdataadapter();
+                        if(m==1)
                             Toast.makeText(MainActivity.this, "Successfully Deleted", Toast.LENGTH_SHORT).show();
                     }
                 })
